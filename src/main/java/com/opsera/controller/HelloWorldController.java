@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 
-    @GetMapping
+    @GetMapping(value="/test")
     public String hello() {
         return "Opsera EBS Testing Runcount 59 with Domain and Zone id";
     }
