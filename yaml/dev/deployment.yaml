@@ -50,7 +50,7 @@ spec:
 
 ---
 # Ingress
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
@@ -65,7 +65,9 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: argo-demo
-          servicePort: 8072
+          service:
+            name: argo-demo
+            port:
+              number:  8072
         path: /
 ---
